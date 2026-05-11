@@ -1,53 +1,57 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gizlilik Politikası - Autoposter</title>
+    <title>Privacy Policy - Autoposter AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root { --dark: #0a0a0a; --text: #ffffff; --primary: #ff3b5c; }
-        body { background: var(--dark); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.8; padding: 4rem 2rem; max-width: 800px; margin: 0 auto; }
-        h1 { color: var(--primary); font-size: 2.5rem; margin-bottom: 2rem; }
-        h2 { margin-top: 3rem; font-size: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; }
-        p, li { opacity: 0.8; margin-bottom: 1rem; }
-        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--primary); text-decoration: none; }
+        :root { --dark: #050505; --text: #ffffff; --primary: #ff3b5c; --glass: rgba(255, 255, 255, 0.05); }
+        body { background: var(--dark); color: var(--text); font-family: 'Outfit', sans-serif; line-height: 1.8; padding: 6rem 2rem; max-width: 900px; margin: 0 auto; }
+        h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 3rem; background: linear-gradient(to right, #fff, #888); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        h2 { margin-top: 4rem; font-size: 1.8rem; font-weight: 600; color: var(--primary); border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+        p, li { opacity: 0.7; margin-bottom: 1.5rem; font-size: 1.1rem; }
+        ul { padding-left: 1.5rem; }
+        .back-link { display: inline-block; margin-bottom: 3rem; color: var(--text); text-decoration: none; opacity: 0.5; transition: 0.3s; font-weight: 600; }
+        .back-link:hover { opacity: 1; color: var(--primary); }
+        .last-update { opacity: 0.4; font-size: 0.9rem; margin-bottom: 3rem; }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back-link">← Ana Sayfa</a>
-    <h1>Gizlilik Politikası</h1>
-    <p>Son Güncelleme: 8 Mayıs 2026</p>
+    <a href="index.html" class="back-link">← Back to Home</a>
+    <h1>Privacy Policy</h1>
+    <p class="last-update">Last Updated: May 11, 2026</p>
 
-    <p><strong>ViralVideo Autoposter</strong> ("biz", "bizim" veya "platformumuz"), kullanıcılarımızın gizliliğine önem verir. Bu Gizlilik Politikası, <strong>ViralVideo Autoposter</strong> uygulamasını, TikTok, Instagram ve YouTube API'lerini kullandığınızda verilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu açıklar.</p>
+    <p><strong>Autoposter AI</strong> ("we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your data when you use the Autoposter AI application and our integrations with TikTok, Instagram, and YouTube APIs.</p>
 
-    <h2>1. Toplanan Veriler</h2>
-    <p><strong>ViralVideo Autoposter</strong> uygulamamız aracılığıyla aşağıdaki verileri işleyebiliriz:</p>
+    <h2>1. Information We Collect</h2>
+    <p>When you authorize Autoposter AI via OAuth, we may access the following information:</p>
     <ul>
-        <li><strong>Hesap Bilgileri:</strong> API üzerinden yetkilendirdiğiniz sosyal medya hesaplarınızın isimleri ve ID'leri.</li>
-        <li><strong>İçerik Verileri:</strong> Paylaşmak üzere sisteme yüklediğiniz videolar, resimler ve metinler.</li>
-        <li><strong>Erişim Tokenları:</strong> Platformlara içerik yükleyebilmek için kullanılan geçici OAuth erişim anahtarları.</li>
+        <li><strong>Account Profiles:</strong> Your username, display name, and profile picture (via `user.info.basic`) to identify your account within our dashboard.</li>
+        <li><strong>Content Metadata:</strong> Information about the videos and images you upload for the purpose of scheduling and publishing.</li>
+        <li><strong>Authentication Tokens:</strong> Secure OAuth access tokens required to perform actions (like uploading and publishing) on your behalf. These are encrypted and stored securely.</li>
     </ul>
 
-    <h2>2. Verilerin Kullanım Amacı</h2>
-    <p>Toplanan veriler yalnızca aşağıdaki amaçlarla kullanılır:</p>
+    <h2>2. How We Use Your Data</h2>
+    <p>We use the collected information strictly for the following purposes:</p>
     <ul>
-        <li>İçeriklerin sosyal medya platformlarında otomatik olarak paylaşılması.</li>
-        <li>Yapay zeka yardımıyla içerik analizleri ve açıklama metinleri oluşturulması.</li>
-        <li>Kullanıcıya performans istatistiklerinin sunulması.</li>
+        <li><strong>Automated Publishing:</strong> To upload and publish your content to TikTok, Instagram, or YouTube as requested by you.</li>
+        <li><strong>AI Optimization:</strong> To analyze your video content and generate relevant captions, tags, and SEO metadata using AI services (e.g., Google Gemini).</li>
+        <li><strong>User Experience:</strong> To display your connected accounts in the application interface so you can manage multiple profiles easily.</li>
     </ul>
 
-    <h2>3. Veri Güvenliği</h2>
-    <p>Erişim tokenları ve kullanıcı verileri yerel ortamda (veya güvenli sunucularımızda) şifrelenmiş olarak saklanır. Verileriniz üçüncü taraf şahıslarla asla paylaşılmaz veya satılmaz.</p>
+    <h2>3. Data Security & Retention</h2>
+    <p>Your security is our top priority. All access tokens are stored in an encrypted format. We do not store your raw passwords. We only retain the data necessary to provide our services, and you can revoke our access at any time through the respective platform's security settings.</p>
 
-    <h2>4. Üçüncü Taraf Hizmetler</h2>
-    <p><strong>ViralVideo Autoposter</strong> platformumuz TikTok, Google (YouTube) ve Meta (Instagram) API'lerini kullanır. Bu hizmetlerin kullanımında ilgili platformların gizlilik politikaları da geçerlidir:</p>
+    <h2>4. Third-Party Services</h2>
+    <p>Autoposter AI interacts with several third-party APIs. By using our tool, you also agree to be bound by their respective privacy policies:</p>
     <ul>
-        <li>TikTok Privacy Policy</li>
-        <li>Google Privacy Policy</li>
-        <li>Meta Data Policy</li>
+        <li><a href="https://www.tiktok.com/legal/privacy-policy" style="color: var(--primary);">TikTok Privacy Policy</a></li>
+        <li><a href="https://policies.google.com/privacy" style="color: var(--primary);">Google Privacy Policy (YouTube)</a></li>
+        <li><a href="https://www.facebook.com/policy.php" style="color: var(--primary);">Meta Data Policy (Instagram)</a></li>
     </ul>
 
-    <h2>5. İletişim</h2>
-    <p>Gizlilikle ilgili sorularınız için bizimle iletişime geçebilirsiniz.</p>
+    <h2>5. Contact Us</h2>
+    <p>If you have any questions or concerns regarding this Privacy Policy or our data practices, please contact us through our official support channels.</p>
 </body>
 </html>
