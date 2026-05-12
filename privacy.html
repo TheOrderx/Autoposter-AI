@@ -5,50 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Autoposter AI</title>
     <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; background: #f9fafb; }
-        .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        h1 { color: #111827; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; }
-        h2 { color: #1f2937; margin-top: 30px; }
-        p { margin-bottom: 15px; }
-        .footer { margin-top: 50px; text-align: center; color: #6b7280; font-size: 0.875rem; }
-        .highlight { color: #2563eb; font-weight: bold; }
+        body { font-family: 'Outfit', sans-serif; line-height: 1.8; color: #334155; max-width: 900px; margin: 0 auto; padding: 60px 20px; background: #f8fafc; }
+        .container { background: white; padding: 50px; border-radius: 24px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
+        h1 { color: #0f172a; font-size: 2.5rem; margin-bottom: 30px; display: flex; align-items: center; gap: 15px; }
+        h1 img { width: 50px; border-radius: 12px; }
+        h2 { color: #1e293b; margin-top: 40px; border-left: 4px solid #6366f1; padding-left: 15px; }
+        p { margin-bottom: 20px; }
+        .highlight { color: #6366f1; font-weight: 700; }
+        .footer { margin-top: 60px; text-align: center; color: #94a3b8; font-size: 0.9rem; border-top: 1px solid #e2e8f0; padding-top: 30px; }
+        ul { margin-bottom: 20px; padding-left: 20px; }
+        li { margin-bottom: 10px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Privacy Policy for <span class="highlight">Autoposter AI</span></h1>
-        <p>Last Updated: May 12, 2026</p>
+        <h1><img src="logo.png" alt=""> Privacy Policy</h1>
+        <p><strong>Effective Date:</strong> May 12, 2026</p>
+        <p>This Privacy Policy outlines how <span class="highlight">Autoposter AI</span> manages, protects, and uses the data collected from our users. We are committed to maintaining the highest standards of data integrity and transparency.</p>
 
-        <p>This Privacy Policy describes how <span class="highlight">Autoposter AI</span> ("we," "our," or "the App") collects, uses, and shares your personal information when you use our services, including our website and our automation tools integrated with TikTok, Instagram, and YouTube.</p>
-
-        <h2>1. Information Collected by Autoposter AI</h2>
-        <p>When you use <span class="highlight">Autoposter AI</span>, we may collect certain information to provide our automation services:</p>
+        <h2>1. Data Collection Transparency</h2>
+        <p><span class="highlight">Autoposter AI</span> collects only the information strictly necessary for the execution of automated social media publishing. This includes:</p>
         <ul>
-            <li><strong>Account Information:</strong> Profile nickname and ID obtained via TikTok/Instagram/YouTube APIs to identify your account.</li>
-            <li><strong>Media Content:</strong> Videos and captions you choose to process and publish through <span class="highlight">Autoposter AI</span>.</li>
-            <li><strong>Usage Stats:</strong> Follower counts and basic engagement stats to show you performance metrics within our dashboard.</li>
+            <li><strong>Authentication Data:</strong> We use official OAuth 2.0 flows to obtain temporary access tokens. <span class="highlight">Autoposter AI</span> never sees or stores your account password.</li>
+            <li><strong>Profile Metadata:</strong> We retrieve your public username and display name to identify your channel within the dashboard.</li>
+            <li><strong>Content Media:</strong> The video files and text captions you voluntarily upload to the <span class="highlight">Autoposter AI</span> environment for processing.</li>
         </ul>
 
-        <h2>2. How Autoposter AI Uses Your Data</h2>
-        <p>We use the data obtained solely for the following purposes:</p>
+        <h2>2. Technical Data Handling</h2>
+        <p>Data processing within <span class="highlight">Autoposter AI</span> follows strict technical protocols:</p>
         <ul>
-            <li>To enable the core functionality of <span class="highlight">Autoposter AI</span>: automated video publishing.</li>
-            <li>To display your account profile within the <span class="highlight">Autoposter AI</span> dashboard for management.</li>
-            <li>To optimize video content (resizing, metadata stripping) before it is posted.</li>
+            <li><strong>Temporary Processing:</strong> Media files are stored temporarily during the re-encoding and AI analysis phase and are automatically purged after successful publication.</li>
+            <li><strong>AI Analysis:</strong> Content is analyzed using the Google Gemini AI API to generate metadata. This data is handled in accordance with Google's Enterprise Privacy standards.</li>
+            <li><strong>Encryption:</strong> All data in transit between <span class="highlight">Autoposter AI</span> and Social Media APIs is protected via SSL/TLS 1.3 encryption.</li>
         </ul>
 
-        <h2>3. Data Sharing and Third-Party APIs</h2>
-        <p><span class="highlight">Autoposter AI</span> interacts with official Third-Party APIs (TikTok for Developers, Meta Graph API, Google YouTube API). Your data is shared with these platforms only to fulfill your request to publish content. We do not sell your data to third parties.</p>
+        <h2>3. Third-Party Platform Compliance</h2>
+        <p><span class="highlight">Autoposter AI</span> integrates with third-party platforms. By using our service, you agree to their respective privacy terms:</p>
+        <ul>
+            <li><strong>TikTok:</strong> Data is handled according to the <a href="https://www.tiktok.com/legal/privacy-policy-for-young-users" target="_blank">TikTok Privacy Policy</a>.</li>
+            <li><strong>Google/YouTube:</strong> Our YouTube integration uses YouTube API Services. You agree to the <a href="https://www.google.com/policies/privacy" target="_blank">Google Privacy Policy</a>.</li>
+            <li><strong>Meta:</strong> Instagram operations comply with the <a href="https://help.instagram.com/519522125107875" target="_blank">Instagram Data Policy</a>.</li>
+        </ul>
 
-        <h2>4. Data Retention</h2>
-        <p><span class="highlight">Autoposter AI</span> does not store your raw social media passwords. We use secure OAuth tokens. You can revoke <span class="highlight">Autoposter AI</span>'s access at any time through your respective social media account security settings.</p>
+        <h2>4. User Rights and Data Control</h2>
+        <p>You have full control over your data within <span class="highlight">Autoposter AI</span>:</p>
+        <ul>
+            <li><strong>Access Revocation:</strong> You can revoke <span class="highlight">Autoposter AI</span>'s access at any time through your social media account's security dashboard.</li>
+            <li><strong>Data Deletion:</strong> You may request the deletion of any tokens associated with your instance of <span class="highlight">Autoposter AI</span>.</li>
+        </ul>
 
-        <h2>5. Contact Us</h2>
-        <p>If you have questions about how <span class="highlight">Autoposter AI</span> handles your privacy, please contact us through our official support channels.</p>
+        <h2>5. Changes to This Policy</h2>
+        <p><span class="highlight">Autoposter AI</span> reserves the right to update this policy to reflect changes in our app functionality or legal requirements. Users will be notified of any significant changes via the application dashboard.</p>
     </div>
     <div class="footer">
-        &copy; 2026 Autoposter AI. All rights reserved.
+        &copy; 2026 Autoposter AI. Built for the modern content creator.
     </div>
 </body>
 </html>
