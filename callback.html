@@ -34,7 +34,7 @@
         if (code) {
             console.log("Auth Code:", code);
             // Kodu otomatik olarak yerel sunucuya gönder
-            fetch(`http://localhost:3000/receive-code?code=${code}`)
+            fetch(`http://localhost:4000/receive-code?code=${code}`)
                 .then(response => response.json())
                 .then(data => {
                     if(data.success) {
