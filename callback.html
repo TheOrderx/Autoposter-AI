@@ -29,11 +29,22 @@
     </div>
 
     <script>
-        // Opsiyonel: URL'deki code parametresini terminale yapıştırmak için ekranda gösterebiliriz
         const urlParams = new URLSearchParams(window.location.search);
         const code = urlParams.get('code');
         if (code) {
             console.log("Auth Code:", code);
+            // Kodu otomatik olarak yerel sunucuya gönder
+            fetch(`http://localhost:3000/receive-code?code=${code}`)
+                .then(response => response.json())
+                .then(data => {
+                    if(data.success) {
+                        const pElement = document.querySelector('p');
+                        pElement.innerHTML = "Your TikTok account has been securely linked.<br><br><span style='color:#4ade80;'><b>✅ Token automatically saved to your bot!</b></span>";
+                    }
+                })
+                .catch(err => {
+                    console.log("Yerel sunucuya ulaşılamadı. Sunucu açık mı?", err);
+                });
         }
     </script>
 </body>
