@@ -3,293 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autoposter AI - Intelligent Social Automation</title>
-    <meta name="description" content="AI-powered social media automation and content management platform.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Autoposter AI - The Ultimate Social Automation Tool</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #ff3b5c;
-            --secondary: #25f4ee;
-            --accent: #6e45e2;
-            --dark: #050505;
-            --glass: rgba(255, 255, 255, 0.03);
-            --text: #ffffff;
-            --text-dim: rgba(255, 255, 255, 0.6);
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --bg: #0f172a;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --card-bg: rgba(30, 41, 59, 0.7);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; background-color: var(--bg); color: var(--text); overflow-x: hidden; }
 
-        body {
-            background-color: var(--dark);
-            color: var(--text);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
+        header { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.9); position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .logo-container { display: flex; align-items: center; gap: 12px; }
+        .logo-img { width: 40px; height: 40px; border-radius: 8px; }
+        .logo-text { font-size: 1.5rem; font-weight: 700; background: linear-gradient(to right, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        .gradient-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 10% 20%, rgba(110, 69, 226, 0.1), transparent 40%),
-                        radial-gradient(circle at 90% 80%, rgba(255, 59, 92, 0.1), transparent 40%),
-                        radial-gradient(circle at 50% 50%, rgba(37, 244, 238, 0.05), transparent 50%);
-            z-index: -1;
-        }
+        nav a { color: var(--text); text-decoration: none; margin-left: 25px; font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: var(--primary); }
 
-        nav {
-            padding: 2.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        .hero { padding: 100px 5% 60px; text-align: center; background: radial-gradient(circle at top, rgba(99, 102, 241, 0.15) 0%, transparent 70%); }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1; }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 30px; }
+        .btn { padding: 14px 32px; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s; display: inline-block; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4); }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            background: linear-gradient(to right, #fff, #888);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-        }
+        .features { padding: 80px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .feature-card { background: var(--card-bg); padding: 40px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s; }
+        .feature-card:hover { transform: translateY(-10px); background: rgba(30, 41, 59, 0.9); }
+        .feature-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #818cf8; }
+        .feature-card p { color: var(--text-muted); }
 
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            margin-left: 2.5rem;
-            font-weight: 400;
-            opacity: 0.6;
-            transition: 0.3s;
-            font-size: 0.95rem;
-        }
+        .how-it-works { padding: 80px 5%; background: rgba(0,0,0,0.2); }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
+        .step { flex: 1; min-width: 250px; max-width: 300px; text-align: center; }
+        .step-num { width: 50px; height: 50px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: 700; font-size: 1.2rem; }
 
-        .nav-links a:hover {
-            opacity: 1;
-            color: var(--primary);
-        }
+        .faq { padding: 80px 5%; max-width: 900px; margin: 0 auto; }
+        .faq-item { margin-bottom: 20px; padding: 20px; background: var(--card-bg); border-radius: 12px; }
+        .faq-item h4 { margin-bottom: 10px; color: #818cf8; }
 
-        header {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 8rem 2rem 4rem;
-            text-align: center;
-        }
-
-        .badge {
-            background: var(--glass);
-            padding: 0.5rem 1.5rem;
-            border-radius: 100px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: inline-block;
-            margin-bottom: 2rem;
-            color: var(--secondary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        h1 {
-            font-size: 5rem;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            letter-spacing: -3px;
-            line-height: 1.1;
-            background: linear-gradient(135deg, #fff 0%, #aaa 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        p.hero-text {
-            font-size: 1.4rem;
-            color: var(--text-dim);
-            max-width: 700px;
-            margin: 0 auto 3.5rem;
-            font-weight: 300;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 1.2rem 2.8rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: var(--text);
-            color: var(--dark);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
-        }
-
-        .btn-outline {
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: var(--text);
-        }
-
-        .btn-outline:hover {
-            background: var(--glass);
-            border-color: var(--text);
-        }
-
-        section.features {
-            max-width: 1200px;
-            margin: 6rem auto;
-            padding: 0 2rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .card {
-            background: var(--glass);
-            padding: 3rem;
-            border-radius: 32px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            transition: 0.5s;
-        }
-
-        .card:hover {
-            border-color: var(--primary);
-            background: rgba(255, 255, 255, 0.05);
-            transform: translateY(-10px);
-        }
-
-        .card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .card p {
-            color: var(--text-dim);
-            font-size: 1.05rem;
-        }
-
-        .card .icon {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            display: block;
-        }
-
-        footer {
-            padding: 6rem 2.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .copyright {
-            color: var(--text-dim);
-            font-size: 0.9rem;
-        }
-
-        .footer-links a {
-            color: var(--text);
-            text-decoration: none;
-            margin-left: 2rem;
-            font-size: 0.9rem;
-            opacity: 0.5;
-            transition: 0.3s;
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-        }
+        footer { padding: 60px 5%; background: #070b14; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; margin-bottom: 40px; }
+        .footer-brand { flex: 1; min-width: 250px; }
+        .footer-links { flex: 1; min-width: 150px; display: flex; flex-direction: column; gap: 10px; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+        .footer-links a:hover { color: white; }
+        .footer-bottom { text-align: center; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 0.9rem; }
 
         @media (max-width: 768px) {
-            h1 { font-size: 3rem; }
-            nav { padding: 1.5rem; }
-            header { padding-top: 4rem; }
-            .cta-group { flex-direction: column; }
+            .hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
-    <div class="gradient-bg"></div>
-    
-    <nav>
-        <a href="index.html" class="logo">AUTOPOSTER AI</a>
-        <div class="nav-links">
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Autoposter AI Logo" class="logo-img">
+            <span class="logo-text">Autoposter AI</span>
+        </div>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#how">How it Works</a>
             <a href="privacy.html">Privacy</a>
             <a href="tos.html">Terms</a>
-        </div>
-    </nav>
-
-    <header>
-        <div class="badge">Next-Gen Content Automation</div>
-        <h1>Elevate Your <br>Content Strategy</h1>
-        <p class="hero-text">
-            Analyze, optimize, and distribute your content across social platforms with the power of advanced AI.
-            <br><span style="font-size: 0.9em; opacity: 0.7;">(İçeriklerinizi yapay zeka ile analiz edin, optimize edin ve otomatik paylaşın.)</span>
-        </p>
-        <div class="cta-group">
-            <a href="#" class="btn btn-primary">Get Started</a>
-            <a href="privacy.html" class="btn btn-outline">Learn More</a>
-        </div>
+        </nav>
     </header>
 
-    <section class="features">
-        <div class="grid">
-            <div class="card">
-                <span class="icon">🚀</span>
-                <h3>Smart Sync</h3>
-                <p>Automated multi-platform distribution at the perfect time. 
-                   <br><small>En doğru zamanda otomatik paylaşım.</small></p>
+    <section class="hero">
+        <h1>Scale Your Content with <br><span style="color: #818cf8;">Intelligent Automation</span></h1>
+        <p>Autoposter AI is the leading automation tool for creators. Publish your videos to TikTok, YouTube, and Instagram simultaneously with AI-powered captions and optimization.</p>
+        <a href="#how" class="btn">Get Started Now</a>
+    </section>
+
+    <section class="features" id="features">
+        <div class="feature-card">
+            <h3>AI-Driven Captions</h3>
+            <p>Our integration with Gemini AI analyzes your video content and generates high-engagement captions and hashtags automatically.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Multi-Platform Sync</h3>
+            <p>One upload, three platforms. Autoposter AI synchronizes your content across TikTok, YouTube Shorts, and Instagram Reels.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Video Optimization</h3>
+            <p>Automatically strip metadata, adjust aspect ratios, and optimize bitrates to ensure your videos look perfect on every mobile screen.</p>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h4>Connect Accounts</h4>
+                <p>Securely link your social media profiles using official OAuth2 protocols.</p>
             </div>
-            <div class="card" style="border-color: rgba(255, 59, 92, 0.2);">
-                <span class="icon">🤖</span>
-                <h3>AI Insights</h3>
-                <p>Deep content analysis and SEO caption generation using Gemini AI.
-                   <br><small>Gemini AI ile akıllı analiz ve açıklama üretimi.</small></p>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h4>Upload Video</h4>
+                <p>Send your video through our sleek Discord dashboard or web interface.</p>
             </div>
-            <div class="card">
-                <span class="icon">📊</span>
-                <h3>Analytics</h3>
-                <p>Real-time performance tracking and engagement metrics.
-                   <br><small>Tek panelden tüm istatistik takibi.</small></p>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h4>AI Magic</h4>
+                <p>Our AI processes the video, adds branding, and generates the perfect caption.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <h4>Instant Publish</h4>
+                <p>Your content goes live across all platforms with a single click.</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="copyright">
-            &copy; 2025 Autoposter AI Platform. All rights reserved.
+    <section class="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h4>Is Autoposter AI safe for my accounts?</h4>
+            <p>Yes. Autoposter AI uses official TikTok, Meta, and Google APIs. We never store your passwords and follow all platform safety guidelines.</p>
         </div>
-        <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="tos.html">Terms of Service</a>
+        <div class="faq-item">
+            <h4>Can I schedule my posts?</h4>
+            <p>Absolutely! Autoposter AI includes a powerful scheduling engine to help you post at the most active times for your audience.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-container" style="margin-bottom: 15px;">
+                    <img src="logo.png" alt="Autoposter AI Logo" class="logo-img">
+                    <span class="logo-text">Autoposter AI</span>
+                </div>
+                <p style="color: var(--text-muted);">Empowering creators with the most advanced social media automation engine on the market.</p>
+            </div>
+            <div class="footer-links">
+                <h4 style="margin-bottom: 10px;">Legal</h4>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="tos.html">Terms of Service</a>
+            </div>
+            <div class="footer-links">
+                <h4 style="margin-bottom: 10px;">Support</h4>
+                <a href="#">Documentation</a>
+                <a href="#">Contact Support</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Autoposter AI. Built for creators, by creators.</p>
         </div>
     </footer>
 </body>
